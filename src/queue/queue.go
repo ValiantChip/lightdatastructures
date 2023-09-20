@@ -29,7 +29,7 @@ func (q *Queue[T]) Pop() (T, bool) {
 		return t, false
 	}
 	t = q.arr[q.tail]
-	q.tail = q.tail + 1%len(q.arr)
+	q.tail = (q.tail + 1) % len(q.arr)
 	q.len--
 
 	return t, true
